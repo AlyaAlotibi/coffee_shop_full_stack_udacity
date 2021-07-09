@@ -65,13 +65,11 @@ def get_drinks_detail(payload):
 @requires_auth('post:drinks')
 def add_drinks(payload):
     body=request.get_json()
-    if 'title' in body:
-        new_title=body['title']
-    else:
+    new_title=body['title']
+    new_recipe=json.dumps(body['recipe'])
+    if new_recipe is None:
         abort(422)
-    if 'recipe' in body:
-        new_recipe=json.dumps(body['recipe'])
-    else:
+    if new_title is None:
         abort(422)
     try:
         new_drink=Drink(title=new_title,recipe=new_recipe)
