@@ -64,10 +64,16 @@ def get_drinks_detail(payload):
 @app.route('/drinks', methods=['POST'])
 @requires_auth('post:drinks')
 def add_drinks(payload):
-    try:
-        body=request.get_json()
+    body=request.get_json()
+    if 'title' in body:
         new_title=body['title']
+    else:
+        abort(422)
+    if 'recipe' in body:
         new_recipe=json.dumps(body['recipe'])
+    else:
+        abort(422)
+    try:
         new_drink=Drink(title=new_title,recipe=new_recipe)
         Drink.insert(new_drink)
         drinks=Drink.query.all()
@@ -77,7 +83,7 @@ def add_drinks(payload):
         abort(401)
 
 '''
-@TODO implement endpoint
+@TODO1 implement endpoint
     PATCH /drinks/<id>
         where <id> is the existing model id
         it should respond with a 404 error if <id> is not found
@@ -104,7 +110,7 @@ def edit_drinks(payload,id):
         abort(401)
 
 '''
-@TODO implement endpoint
+@TODO1 implement endpoint
     DELETE /drinks/<id>
         where <id> is the existing model id
         it should respond with a 404 error if <id> is not found
