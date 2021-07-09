@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "a39530a0-754d-4882-84a8-d5029f6d7270",
+		"name": "udacity_project3_Al",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get drink 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3ZTdkYjA2YmRiZTAwNzFhNzE5OTEiLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1ODM4MDk0LCJleHAiOjE2MjU4NDUyOTQsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.HbHdH2JMwEJ5c9Hv_ZFLQhtPyDPxVe1iIzcqxu5AJCdkWHECmgVTayz1bIij-0gOTo34XpV2xt64GRsk6BXYAXOedinHoE6x4kgKSoeaCmu3VfIiX-nyQhMjlNqzVjDZddh45xf7z4nmF7bxaodcHxgUkdXYWpqmpmVJQpKXqMSHD8LjZCXpen354aXjINmWZQEpKPzzeyXVpPjrKHxiVROKmMiKPo3t1xhFRRrvApXWz3RjBPbTRQJla4ZlC9ZQoeO4-Tf80AokBVCMgyeNRGDqwxjaaPooE9FMXq4Fu91lN8pb8469NkiIz84110tjn7X8nKEmPsbGVLJ3FJWEvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get drink 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 14:45:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"latte\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"water\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice\"\n        }\n    ],\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get drink-detail 200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3ZTdkYjA2YmRiZTAwNzFhNzE5OTEiLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1ODM4MDk0LCJleHAiOjE2MjU4NDUyOTQsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.HbHdH2JMwEJ5c9Hv_ZFLQhtPyDPxVe1iIzcqxu5AJCdkWHECmgVTayz1bIij-0gOTo34XpV2xt64GRsk6BXYAXOedinHoE6x4kgKSoeaCmu3VfIiX-nyQhMjlNqzVjDZddh45xf7z4nmF7bxaodcHxgUkdXYWpqmpmVJQpKXqMSHD8LjZCXpen354aXjINmWZQEpKPzzeyXVpPjrKHxiVROKmMiKPo3t1xhFRRrvApXWz3RjBPbTRQJla4ZlC9ZQoeO4-Tf80AokBVCMgyeNRGDqwxjaaPooE9FMXq4Fu91lN8pb8469NkiIz84110tjn7X8nKEmPsbGVLJ3FJWEvQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks-detail",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks-detail"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get drink-detail 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks-detail",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 14:47:27 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"latte\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"latte\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"wr\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"water\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"ice\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice\"\n        }\n    ],\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get drink-detail 401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\",function(){\r",
+							"    pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3NWU5YjA0M2MzYzAwNjk3Yzc1NTciLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1Nzc1ODAyLCJleHAiOjE2MjU3ODMwMDIsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6W119.m2PKPTy64kFCW9uw5sKeiwu5c0ueuYmbFca3r6hga8N39vGtczQuntJMEqtSPxWYwcqGN58RXEDEGyV8uoJkDnS0TXQWq8iZb_yvaPFd2BNeasij0t-iCg7HleTxp-VY-xTIx3B7bCEnhsbzSAlcAdyiU0S-kweqfiwWI_ZKA88pJVseD5PCrJbNpUKeW0NKVQG-Z-ABsF8waGGXyBTCtzHJ1hsueiAA3Y48pueIQKfk01Yl68zgCNjiBA5Ywv7JYxoR0sr1it7b4AFDfHhtwGec7kathbccoW2P7Ocg64CDknXC-KVCQdxujWHx_9dmWD4dg2CSP1rNYIwEcAU5eQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks-detail",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks-detail"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get drink-detail 401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks-detail",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks-detail"
+							]
+						}
+					},
+					"status": "UNAUTHORIZED",
+					"code": 401,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "343"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 14:48:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<title>401 Unauthorized</title>\n<h1>Unauthorized</h1>\n<p>The server could not verify that you are authorized to access the URL requested. You either supplied the wrong credentials (e.g. a bad password), or your browser doesn&#x27;t understand how to supply the credentials required.</p>"
+				}
+			]
+		},
+		{
+			"name": "Post drink",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3ZTdkYjA2YmRiZTAwNzFhNzE5OTEiLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1ODQzMDM1LCJleHAiOjE2MjU4NTAyMzUsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.NPGpinmPC46kxmvQfYSwQivYqDZtrk8Tsx7ZHSbOpeUl4_QyUpjXWFDSblJxekPVGoHrxlnN7voQJZvPIVd1lZp3TQR-qtDk4-KHq36ASwz8qQyIwjzIuiZBLyJoriqYCMHREDlInpPFGouYJHPdhL5t1TvAIbbnuZFzDSvySU4Ob6tJhn8E--vbz3VpZZHJyeB_VQ9CRAhXEIxmIOJpg01sDg3hXcb0zw_xU7FjZOL6GdriHYXZm4x__eMvxtBI3id3Kz0pNNDTk3T0aQcPnrtO-d7UMTeVwVYxnwK6Mm_eT6S1KMjdBVSR3GNtS4REcSWqNTlTHzwPi0F2NLDZTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"ice moca\",\"recipe\": [ {\"color\": \"brown milk\",\"name\": \"ice moca\",\"parts\": 1}]}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post drink",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"ice moca\",\"recipe\": [ {\"color\": \"brown milk\",\"name\": \"ice moca\",\"parts\": 1}]}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "427"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 15:25:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"latte\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"latte\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"wr\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"water\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"ice\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown milk\",\n                    \"name\": \"moca\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"moca\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown milk\",\n                    \"name\": \"ice moca\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice moca\"\n        }\n    ],\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "patch drink",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3ZTdkYjA2YmRiZTAwNzFhNzE5OTEiLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1ODQzMDM1LCJleHAiOjE2MjU4NTAyMzUsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.NPGpinmPC46kxmvQfYSwQivYqDZtrk8Tsx7ZHSbOpeUl4_QyUpjXWFDSblJxekPVGoHrxlnN7voQJZvPIVd1lZp3TQR-qtDk4-KHq36ASwz8qQyIwjzIuiZBLyJoriqYCMHREDlInpPFGouYJHPdhL5t1TvAIbbnuZFzDSvySU4Ob6tJhn8E--vbz3VpZZHJyeB_VQ9CRAhXEIxmIOJpg01sDg3hXcb0zw_xU7FjZOL6GdriHYXZm4x__eMvxtBI3id3Kz0pNNDTk3T0aQcPnrtO-d7UMTeVwVYxnwK6Mm_eT6S1KMjdBVSR3GNtS4REcSWqNTlTHzwPi0F2NLDZTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"wrr\",\"recipe\": [ {\"color\": \"blue\",\"name\": \"water\",\"parts\": 1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "patch drink",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"wrr\",\"recipe\": [ {\"color\": \"blue\",\"name\": \"water\",\"parts\": 1}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "425"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 15:35:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"drinks\": [\n        {\n            \"id\": 1,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"water\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"wrr\"\n        },\n        {\n            \"id\": 2,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"wr\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"water\"\n        },\n        {\n            \"id\": 3,\n            \"recipe\": [\n                {\n                    \"color\": \"blue\",\n                    \"name\": \"ice\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice\"\n        },\n        {\n            \"id\": 4,\n            \"recipe\": [\n                {\n                    \"color\": \"brown milk\",\n                    \"name\": \"moca\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"moca\"\n        },\n        {\n            \"id\": 5,\n            \"recipe\": [\n                {\n                    \"color\": \"brown milk\",\n                    \"name\": \"ice moca\",\n                    \"parts\": 1\n                }\n            ],\n            \"title\": \"ice moca\"\n        }\n    ],\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "delete drink",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1HZmJYa0VYNHM1dlVFMEUzdXl2cyJ9.eyJpc3MiOiJodHRwczovL2FseWEtdWRhY2l0eS1zdHVkZW50LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MGU3ZTdkYjA2YmRiZTAwNzFhNzE5OTEiLCJhdWQiOiJjb2ZmZWVfc2hvcF9mdWxsX3N0YWNrIiwiaWF0IjoxNjI1ODQzMDM1LCJleHAiOjE2MjU4NTAyMzUsImF6cCI6IjhBeFZ2Q0x3czNka0FaTW9HQWhta3dKeUhLN2JJejVBIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.NPGpinmPC46kxmvQfYSwQivYqDZtrk8Tsx7ZHSbOpeUl4_QyUpjXWFDSblJxekPVGoHrxlnN7voQJZvPIVd1lZp3TQR-qtDk4-KHq36ASwz8qQyIwjzIuiZBLyJoriqYCMHREDlInpPFGouYJHPdhL5t1TvAIbbnuZFzDSvySU4Ob6tJhn8E--vbz3VpZZHJyeB_VQ9CRAhXEIxmIOJpg01sDg3hXcb0zw_xU7FjZOL6GdriHYXZm4x__eMvxtBI3id3Kz0pNNDTk3T0aQcPnrtO-d7UMTeVwVYxnwK6Mm_eT6S1KMjdBVSR3GNtS4REcSWqNTlTHzwPi0F2NLDZTg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/drinks/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"drinks",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete drink",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/drinks/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"drinks",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.0.1 Python/3.8.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Jul 2021 15:37:08 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"delete\": \"2\",\n    \"success\": true\n}"
+				}
+			]
+		}
+	]
+}
