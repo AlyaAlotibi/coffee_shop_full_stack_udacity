@@ -17,7 +17,7 @@ CORS(app)
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 !! Running this funciton will add one
 '''
-db_drop_and_create_all()
+#db_drop_and_create_all()
 
 # ROUTES
 '''
@@ -53,7 +53,7 @@ def get_drinks_detail(payload):
         abort(401)
 
 '''
-@TODO implement endpoint
+@TODO1 implement endpoint
     POST /drinks
         it should create a new row in the drinks table
         it should require the 'post:drinks' permission
@@ -87,7 +87,21 @@ def add_drinks(payload):
     returns status code 200 and json {"success": True, "drinks": drink} where drink an array containing only the updated drink
         or appropriate status code indicating reason for failure
 '''
-
+@app.route('/drinks/<id>', methods=['PATCH'])
+@requires_auth('patch:drinks')
+def edit_drinks(payload,id):
+    try:
+        drink=Drink.query.filter(Drink.id == id).one_or_none()
+        if drink is None:
+            abort(404)
+        body=request.get_json()
+        drink.title=body['title']
+        drink.recipe=json.dumps(body['recipe'])
+        Drink.update(drink)
+        return jsonify({"success": True,
+             "drinks": [drink.long() for drink in Drink.query.all()]}),200
+    except:
+        abort(401)
 
 '''
 @TODO implement endpoint
