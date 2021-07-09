@@ -35,7 +35,7 @@ def get_drinks():
      "drinks": [drink.short() for drink in drinks]}),200
 
 '''
-@TODO implement endpoint 
+@TODO1 implement endpoint 
     GET /drinks-detail
         it should require the 'get:drinks-detail' permission
         it should contain the drink.long() data representation
@@ -47,7 +47,6 @@ def get_drinks():
 def get_drinks_detail(payload):
     try:
         drinks=Drink.query.all()
-        print(payload)
         return jsonify({"success": True,
              "drinks": [drink.long() for drink in drinks]}),200
     except:
@@ -62,7 +61,20 @@ def get_drinks_detail(payload):
     returns status code 200 and json {"success": True, "drinks": drink} where drink an array containing only the newly created drink
         or appropriate status code indicating reason for failure
 '''
-
+@app.route('/drinks', methods=['POST'])
+@requires_auth('post:drinks')
+def add_drinks(payload):
+    try:
+        body=request.get_json()
+        new_title=body['title']
+        new_recipe=json.dumps(body['recipe'])
+        new_drink=Drink(title=new_title,recipe=new_recipe)
+        Drink.insert(new_drink)
+        drinks=Drink.query.all()
+        return jsonify({"success": True,
+             "drinks": [drink.long() for drink in drinks]}),200
+    except:
+        abort(401)
 
 '''
 @TODO implement endpoint
